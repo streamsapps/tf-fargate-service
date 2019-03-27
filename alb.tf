@@ -8,7 +8,7 @@ resource "aws_lb" "alb" {
 }
 
 resource "aws_lb_target_group" "target_group" {
-  name        = "fargate-target-group"
+  name        = "${var.target_group_name}"
   port        = "${var.load_balancer_target_port}"
   protocol    = "${var.load_balancer_target_protocol}"
   vpc_id      = "${var.vpc_id}"
