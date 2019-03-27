@@ -82,6 +82,10 @@ variable "alb_subnets" {
   description = "The subnets for the load balancer"
 }
 
+variable "target_group_name" {
+  description = "The name of the target group"  
+}
+
 variable "load_balancer_target_protocol" {
   default     = "HTTP"
   description = "The target protocol for the load balancer"
