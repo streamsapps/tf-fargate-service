@@ -190,3 +190,15 @@ variable "app_alarm_memory_low_threshold" {
   default     = 20
   description = "see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#service_utilization for more info"
 }
+
+variable "ssl_certificate_id" {
+  default     = ""
+  description = "Load balancer SSL certificate arn"
+}
+
+variable "ssl_policy" {
+  default     = ""
+  description = "The load balancer SSL policy"
+}
+
+
