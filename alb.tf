@@ -23,9 +23,11 @@ resource "aws_lb_target_group" "target_group" {
 
 resource "aws_lb_listener" "listener" {
   load_balancer_arn = "${aws_lb.alb.arn}"
-  #TODO: When certs are a thing change this to HTTPS
-  port              = "80"
-  protocol          = "HTTP"
+  port              = "443"
+  protocol          = "HTTPS"
+  certificate_arn   = "${var.ssl_certificate_id}"
+  ssl_policy        = "${var.ssl_policy}"
+
 
   default_action {
     type             = "forward"
