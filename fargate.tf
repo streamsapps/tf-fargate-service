@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "${var.region}"
+  region = "${var.region}"
 }
 
 resource "aws_ecs_service" "fargate-service" {
@@ -19,10 +19,9 @@ resource "aws_ecs_service" "fargate-service" {
 
   network_configuration {
     assign_public_ip = "true"
-    subnets         = ["${split(",", var.service_subnets)}"]
-    security_groups = ["${split(",", var.service_security_groups)}"]
+    subnets          = ["${var.service_subnets}"]
+    security_groups  = ["${var.service_security_groups}"]
   }
-
 }
 
 resource "aws_ecs_task_definition" "fargate-task" {
