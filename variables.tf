@@ -62,28 +62,32 @@ variable "load_balancer_name" {
 }
 
 variable "alb_internal" {
-  default = "false"  
+  default     = false
   description = "If true, the LB will be internal."
 }
 
 variable "service_security_groups" {
-  description = "The security groups for the load balancer"
+  type        = "list"
+  description = "The security groups for the fargate service"
 }
 
 variable "service_subnets" {
-  description = "The subnets for the load balancer"
+  type        = "list"
+  description = "The subnets for the fargate service"
 }
 
 variable "alb_security_groups" {
+  type        = "list"
   description = "The security groups for the load balancer"
 }
 
 variable "alb_subnets" {
+  type        = "list"
   description = "The subnets for the load balancer"
 }
 
 variable "target_group_name" {
-  description = "The name of the target group"  
+  description = "The name of the target group"
 }
 
 variable "load_balancer_target_protocol" {
@@ -200,5 +204,3 @@ variable "ssl_policy" {
   default     = ""
   description = "The load balancer SSL policy"
 }
-
-
