@@ -42,6 +42,8 @@
 | load\_balancer\_target\_protocol | The target protocol for the load balancer | string | `"HTTP"` | no |
 | memory | The amount (in MiB) of memory used by the task | string | `"512"` | no |
 | network\_mode | defines the network mode the task definition runs in; valid values are bridge and host. | string | `"awsvpc"` | no |
+| r53\_record\_name | r53 record name. leave blank to not create a r53 record | string | `""` | no |
+| r53\_zone\_id | r53 zone id | string | `""` | no |
 | region | aws region for dns name | string | n/a | yes |
 | service\_name | The prefix for the service name. | string | n/a | yes |
 | service\_security\_groups | The security groups for the fargate service | list | n/a | yes |
@@ -51,4 +53,10 @@
 | target\_group\_name | The name of the target group | string | n/a | yes |
 | task\_family | The name of the task family to use for task definitions. | string | n/a | yes |
 | vpc\_id | The VPC ID | string | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| r53\_lb\_alias\_dns\_name |  |
 
