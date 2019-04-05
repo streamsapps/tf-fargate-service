@@ -108,16 +108,37 @@ variable "deregistration_delay" {
   description = "Target group deregistration delay"
 }
 
+variable "healthcheck_timeout_seconds" {
+  default     = 5
+  description = "Target group health check timeout"
+}
+
 variable "healthcheck_interval_seconds" {
-  description = "Target group health check interval"
+  default     = 30
+  description = "Target group health check timeout"
 }
 
 variable "healthcheck_path" {
   description = "Target group health check path"
 }
 
+variable "healthcheck_healthy_threshold" {
+  default     = 3
+  description = "Target group health healthy threshold"
+}
+
+variable "healthcheck_unhealthy_threshold" {
+  default     = 3
+  description = "Target group health unhealthy threshold"
+}
+
 variable "healthcheck_protocol" {
   description = "Target group health check protocol"
+}
+
+variable "healthcheck_grace_period_seconds" {
+  default     = 10
+  description = "Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown"
 }
 
 variable "app_scaling_maximum" {

@@ -15,7 +15,11 @@ resource "aws_lb_target_group" "target_group" {
   target_type = "ip"
 
   health_check {
-    path = "${var.healthcheck_path}"
+    path                = "${var.healthcheck_path}"
+    timeout             = "${var.healthcheck_timeout_seconds}"
+    healthy_threshold   = "${var.healthcheck_healthy_threshold}"
+    unhealthy_threshold = "${var.healthcheck_unhealthy_threshold}"
+    interval            = "${var.healthcheck_interval_seconds}"
   }
 
   depends_on = ["aws_lb.alb"]
