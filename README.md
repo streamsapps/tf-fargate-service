@@ -29,9 +29,13 @@
 | deployment\_minimum\_healthy\_percent | Minimum healthy percent for the service tasks. | string | n/a | yes |
 | deregistration\_delay | Target group deregistration delay | string | n/a | yes |
 | desired\_count | The desired count for tasks to run in the service. | string | n/a | yes |
-| healthcheck\_interval\_seconds | Target group health check interval | string | n/a | yes |
+| healthcheck\_grace\_period\_seconds | Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown | string | `"10"` | no |
+| healthcheck\_healthy\_threshold | Target group health healthy threshold | string | `"3"` | no |
+| healthcheck\_interval\_seconds | Target group health check timeout | string | `"30"` | no |
 | healthcheck\_path | Target group health check path | string | n/a | yes |
 | healthcheck\_protocol | Target group health check protocol | string | n/a | yes |
+| healthcheck\_timeout\_seconds | Target group health check timeout | string | `"5"` | no |
+| healthcheck\_unhealthy\_threshold | Target group health unhealthy threshold | string | `"3"` | no |
 | iam\_role | The IAM service role for the ECS service | string | n/a | yes |
 | load\_balancer\_name | The name for the load balancer | string | n/a | yes |
 | load\_balancer\_target\_port | The target port for the load balancer | string | `"80"` | no |

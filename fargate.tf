@@ -10,6 +10,7 @@ resource "aws_ecs_service" "fargate-service" {
   deployment_minimum_healthy_percent = "${var.deployment_minimum_healthy_percent}"
   deployment_maximum_percent         = "${var.deployment_maximum_percent}"
   launch_type                        = "FARGATE"
+  health_check_grace_period_seconds  = "${var.healthcheck_grace_period_seconds}"
 
   load_balancer {
     target_group_arn = "${aws_lb_target_group.target_group.arn}"
