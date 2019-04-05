@@ -225,3 +225,13 @@ variable "ssl_policy" {
   default     = ""
   description = "The load balancer SSL policy"
 }
+
+variable "r53_record_name" {
+  default     = ""
+  description = "r53 record name. leave blank to not create a r53 record"
+}
+
+variable "r53_zone_id" {
+  default     = ""
+  description = "r53 zone id"
+}
