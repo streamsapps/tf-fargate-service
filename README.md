@@ -27,12 +27,12 @@
 | cpu | The number of cpu units used by the task | string | `"256"` | no |
 | deployment\_maximum\_percent | The maximum percent for the service tasks. | string | n/a | yes |
 | deployment\_minimum\_healthy\_percent | Minimum healthy percent for the service tasks. | string | n/a | yes |
-| deregistration\_delay | Target group deregistration delay | string | n/a | yes |
 | desired\_count | The desired count for tasks to run in the service. | string | n/a | yes |
 | healthcheck\_grace\_period\_seconds | Seconds to ignore failing load balancer health checks on newly instantiated tasks to prevent premature shutdown | string | `"10"` | no |
 | healthcheck\_healthy\_threshold | Target group health healthy threshold | string | `"3"` | no |
 | healthcheck\_interval\_seconds | Target group health check timeout | string | `"30"` | no |
 | healthcheck\_path | Target group health check path | string | n/a | yes |
+| healthcheck\_port | Target group health check port | string | `"traffic-port"` | no |
 | healthcheck\_protocol | Target group health check protocol | string | n/a | yes |
 | healthcheck\_timeout\_seconds | Target group health check timeout | string | `"5"` | no |
 | healthcheck\_unhealthy\_threshold | Target group health unhealthy threshold | string | `"3"` | no |
@@ -58,5 +58,6 @@
 
 | Name | Description |
 |------|-------------|
+| alb\_arn | arn of alb created |
 | r53\_lb\_alias\_dns\_name |  |
 
