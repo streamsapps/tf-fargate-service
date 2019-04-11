@@ -15,6 +15,7 @@ resource "aws_lb_target_group" "target_group" {
   target_type = "ip"
 
   health_check {
+    port                = "${var.healthcheck_port}"
     path                = "${var.healthcheck_path}"
     timeout             = "${var.healthcheck_timeout_seconds}"
     healthy_threshold   = "${var.healthcheck_healthy_threshold}"
@@ -36,4 +37,9 @@ resource "aws_lb_listener" "listener" {
     type             = "forward"
     target_group_arn = "${aws_lb_target_group.target_group.arn}"
   }
+}
+
+output "alb_arn" {
+  value       = "${aws_lb.alb.arn}"
+  description = "arn of alb created"
 }

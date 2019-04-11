@@ -104,8 +104,9 @@ variable "vpc_id" {
   description = "The VPC ID"
 }
 
-variable "deregistration_delay" {
-  description = "Target group deregistration delay"
+variable "healthcheck_port" {
+  default     = "traffic-port"
+  description = "Target group health check port"
 }
 
 variable "healthcheck_timeout_seconds" {
