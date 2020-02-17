@@ -57,7 +57,7 @@ resource "aws_cloudwatch_metric_alarm" "low_cpu" {
   statistic           = "Average"
   threshold           = "${var.app_alarm_cpu_low_threshold}"
 
-  dimensions {
+  dimensions = {
     ClusterName = "${var.cluster_name}"
     ServiceName = "${aws_ecs_service.fargate-service.name}"
   }
@@ -78,7 +78,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   statistic           = "Average"
   threshold           = "${var.app_alarm_cpu_high_threshold}"
 
-  dimensions {
+  dimensions = {
     ClusterName = "${var.cluster_name}"
     ServiceName = "${aws_ecs_service.fargate-service.name}"
   }
@@ -99,7 +99,7 @@ resource "aws_cloudwatch_metric_alarm" "low_memory" {
   statistic           = "Average"
   threshold           = "${var.app_alarm_memory_low_threshold}"
 
-  dimensions {
+  dimensions = {
     ClusterName = "${var.cluster_name}"
     ServiceName = "${aws_ecs_service.fargate-service.name}"
   }
@@ -120,7 +120,7 @@ resource "aws_cloudwatch_metric_alarm" "high_memory" {
   statistic           = "Average"
   threshold           = "${var.app_alarm_memory_high_threshold}"
 
-  dimensions {
+  dimensions = {
     ClusterName = "${var.cluster_name}"
     ServiceName = "${aws_ecs_service.fargate-service.name}"
   }

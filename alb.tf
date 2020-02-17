@@ -3,8 +3,8 @@ resource "aws_lb" "alb" {
   internal           = "${var.alb_internal}"
   ip_address_type    = "ipv4"
   load_balancer_type = "application"
-  security_groups    = ["${var.alb_security_groups}"]
-  subnets            = ["${var.alb_subnets}"]
+  security_groups    = "${var.alb_security_groups}"
+  subnets            = "${var.alb_subnets}"
 }
 
 resource "aws_lb_target_group" "target_group" {

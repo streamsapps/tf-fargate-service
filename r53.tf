@@ -5,8 +5,8 @@ data "aws_route53_zone" "app_zone" {
 
 resource "aws_route53_record" "lb-alias" {
   count   = "${var.r53_record_name == "" ? 0 : 1}"
-  zone_id = "${data.aws_route53_zone.app_zone.zone_id}"
-  name    = "${var.r53_record_name}.${data.aws_route53_zone.app_zone.name}"
+  zone_id = "${data.aws_route53_zone.app_zone.0.zone_id}"
+  name    = "${var.r53_record_name}.${data.aws_route53_zone.app_zone.0.name}"
   type    = "A"
 
   alias {
