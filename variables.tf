@@ -67,22 +67,22 @@ variable "alb_internal" {
 }
 
 variable "service_security_groups" {
-  type        = "list"
+  type        = list(string)
   description = "The security groups for the fargate service"
 }
 
 variable "service_subnets" {
-  type        = "list"
+  type        = list(string)
   description = "The subnets for the fargate service"
 }
 
 variable "alb_security_groups" {
-  type        = "list"
+  type        = list(string)
   description = "The security groups for the load balancer"
 }
 
 variable "alb_subnets" {
-  type        = "list"
+  type        = list(string)
   description = "The subnets for the load balancer"
 }
 
@@ -236,3 +236,4 @@ variable "r53_zone_id" {
   default     = ""
   description = "r53 zone id"
 }
+
